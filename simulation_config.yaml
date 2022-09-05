@@ -7,7 +7,7 @@ wf: "MG-4"
 #wf: "MG-5"
 
 # location of raptor binaries
-raptor_bin_dir: "~/desktop/fonda/raptor_data_simulation/build/bin"
+raptor_bin_dir: "~/desktop/fonda/A2-job-granularity/raptor_data_simulation/build/bin"
 # location of simulated data
 data_out_dir: "~/desktop/fonda/A2-job-granularity/data"
 

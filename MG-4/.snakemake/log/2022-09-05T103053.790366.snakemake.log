@@ -1,0 +1,21 @@
+Building DAG of jobs...
+WorkflowError:
+WorkflowError:
+    MissingInputException: Missing input files for rule dream_IBF:
+        output: IBF.filter
+        affected files:
+            ../data/MG-4/3/bins/2.fasta
+            ../data/MG-4/3/bins/0.fasta
+            ../data/MG-4/3/bins/1.fasta
+    MissingInputException: Missing input files for rule dream_IBF:
+        output: IBF.filter
+        affected files:
+            ../data/MG-4/3/bins/2.fasta
+            ../data/MG-4/3/bins/0.fasta
+            ../data/MG-4/3/bins/1.fasta
+MissingInputException: Missing input files for rule dream_IBF:
+    output: IBF.filter
+    affected files:
+        ../data/MG-4/3/bins/2.fasta
+        ../data/MG-4/3/bins/0.fasta
+        ../data/MG-4/3/bins/1.fasta
