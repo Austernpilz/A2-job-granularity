@@ -8,19 +8,14 @@
 # -----------------------------
 
 rule samtools_merge:
-
 	input:
 		expand("mapped_reads/{read_file}.sam", read_file=read_list)
-	
 	output:
 		"mapped_reads/all.sam"
-	
 	conda:
 		"../../envs/samtools.yaml"
-	
 	resources:
 		nodelist = "cmp[249]"
-
 	shell:
 		"""
 		ulimit -n 2048
@@ -28,19 +23,13 @@ rule samtools_merge:
 		"""
 
 rule samtools_collate:
-	
 	input:
 		"mapped_reads/all.sam"
-	
 	output:
 		"mapped_reads/all_sorted.sam"
-	
 	conda:
 		"../../envs/samtools.yaml"
-	
 	resources:
 		nodelist = "cmp[249]"
-	
 	shell:
 		"samtools collate {input} -o {output}"
-

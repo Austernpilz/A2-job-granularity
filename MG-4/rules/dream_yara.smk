@@ -14,19 +14,14 @@ h = config["nr_hashes"]
 #
 # create an IBF from clustered database
 rule dream_IBF:
-	
 	input:
 		expand("../data/MG-4/" + str(bin_nr) + "/bins/{bin}.fasta", bin = bin_list)
-	
 	output:
 		"IBF.filter"
-
 	params:
 		t = 8
-
 	resources:
 		nodelist = "cmp[249]"
-
 	shell:
 		"dream_yara_build_filter --threads {params.t} --kmer-size {k} --filter-type bloom --bloom-size {bf} --num-hash {h} --output-file {output} {input}"
 
