@@ -15,7 +15,7 @@ rule samtools_merge:
 	conda:
 		"../../envs/samtools.yaml"
 	resources:
-		nodelist = "cmp249"
+		nodelist = "cmp[201-252]"
 	shell:
 		"""
 		ulimit -n 2048
@@ -30,6 +30,6 @@ rule samtools_collate:
 	conda:
 		"../../envs/samtools.yaml"
 	resources:
-		nodelist = "cmp249"
+		nodelist = "cmp[201-252]"
 	shell:
 		"samtools collate {input} -o {output}"

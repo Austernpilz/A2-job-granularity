@@ -19,9 +19,9 @@ rule dream_IBF:
 	output:
 		"IBF.filter"
 	params:
-		t = 8
+		t = 10
 	resources:
-		nodelist = "cmp249"
+		nodelist = "cmp[201-252]"
 	shell:
 		"dream_yara_build_filter --threads {params.t} --kmer-size {k} --filter-type bloom --bloom-size {bf} --num-hash {h} --output-file {output} {input}"
 
@@ -37,7 +37,7 @@ rule dream_FM_index:
 		outdir = "fm_indices/{bin}.",
 		t = 4
 	resources:
-		nodelist = "cmp249"
+		nodelist = "cmp[201-230],cmp239,cmp[241-252]"
 	shell:
 		"""
 		dream_yara_indexer --threads {params.t} --output-prefix {params.outdir} {input}
@@ -58,8 +58,8 @@ rule dream_mapper:
 		"mapped_reads/{read_file}.sam"
 	params:
 		index_dir = "fm_indices/",
-		t = 4
+		t = 10
 	resources:
-		nodelist = "cmp249"
+		nodelist = "cmp[201-252]"
 	shell:
 		"dream_yara_mapper -t {params.t} -ft bloom -e {er} -s {sp} -y full -fi {input.filter} -o {output} {params.index_dir} {input.reads}"
