@@ -31,7 +31,7 @@ read_file_count: 22           # number of dream_mapper jobs (MG-4)
 #
 #-----------------------------
 
-ref_size: 102400        # size of reference in bytes? 4*2^20 = 4MiB
+ref_size: 4294967296        # size of reference in bytes? 4*2^20 = 4MiB
 errors_per_read: 5      # number of errors; this is the basis for error rate in an approximate match
 read_length: 150
 reads_per_genome: 100   # number of reads simulated from each reference sequence 
