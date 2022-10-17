@@ -1,6 +1,6 @@
 # Search parameters (besides error rate)  are set in config.yaml
 configfile: "search_config.yaml"
-
+import ../test.py as test
 # Parameters for the search
 k = config["kmer_length"]
 er = config["allowed_errors"] / rl              # this is the allowed error rate for an approximate match
@@ -60,6 +60,6 @@ rule dream_mapper:
 		index_dir = "fm_indices/",
 		t = 10
 	resources:
-		nodelist = "cmp[201-252]"
+		nodelist = test.function(bin_nr)
 	shell:
 		"dream_yara_mapper -t {params.t} -ft bloom -e {er} -s {sp} -y full -fi {input.filter} -o {output} {params.index_dir} {input.reads}"
