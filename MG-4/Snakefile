@@ -19,3 +19,4 @@ rule make_all:
 
 include: "rules/dream_yara.smk"
 include: "rules/samtools.smk"
+include: "test.py"
