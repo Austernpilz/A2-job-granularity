@@ -7,9 +7,9 @@ wf: "MG-4"
 #wf: "MG-5"
 
 # location of raptor binaries
-raptor_bin_dir: "/nfs/bigdata/ag_abi/manuel/fonda/bin"
+raptor_bin_dir: "/nfs/buffer/ag_abi/manuel/fonda/bin"
 # location of simulated data
-data_out_dir: "/nfs/bigdata/ag_abi/manuel/fonda/A2-job-granularity/data"
+data_out_dir: "/nfs/buffer/ag_abi/manuel/fonda/A2-job-granularity/data"
 
 
 #-----------------------------
