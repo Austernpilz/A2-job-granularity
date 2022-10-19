@@ -21,7 +21,7 @@ rule dream_IBF:
 	params:
 		t = 10
 	resources:
-		nodelist = "cmp[201-252]"
+		nodelist = test.function(bin_nr)
 	shell:
 		"dream_yara_build_filter --threads {params.t} --kmer-size {k} --filter-type bloom --bloom-size {bf} --num-hash {h} --output-file {output} {input}"
 
@@ -37,7 +37,7 @@ rule dream_FM_index:
 		outdir = "fm_indices/{bin}.",
 		t = 4
 	resources:
-		nodelist = "cmp[201-230],cmp239,cmp[241-252]"
+		nodelist = test.function(bin_nr)
 	shell:
 		"""
 		dream_yara_indexer --threads {params.t} --output-prefix {params.outdir} {input}
